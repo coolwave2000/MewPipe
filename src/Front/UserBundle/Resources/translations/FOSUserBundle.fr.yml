@@ -1,0 +1,21 @@
+# Resetting account
+resetting:
+    email:
+        subject: |
+            [Vet-Tune] Réinitialisation de votre mot de passe
+        message:  |
+            <p>Bonjour %username%,</p>
+            <p>Pour réinitialiser votre mot de passe, merci de cliquer sur le lien suivant :</p>
+            <p style="text-align:center"><a href="%confirmationUrl%">%confirmationUrl%</a></p>
+            <p>Cordialement,<br />Vet-Tune.</p>
+
+# Registration
+registration:
+    email:
+        subject: |
+            [Vet-Tune] Bienvenue %username% !
+        message:  |
+            <p>Bonjour %username%,</p>
+            <p>Pour valider votre compte utilisateur, merci de vous rendre sur :</p>
+            <p style="text-align:center"><a href="%confirmationUrl%">%confirmationUrl%</a></p>
+            <p>Cordialement,<br />Vet-Tune.</p>

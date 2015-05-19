@@ -1,0 +1,12 @@
+front_general_homepage:
+    path:     /
+    defaults: { _controller: FrontGeneralBundle:Default:index }
+
+front_general_mesVideos:
+    path:     /MesVideos
+    defaults: { _controller: FrontGeneralBundle:Default:mesVideos }
+
+front_general_upload:
+    path:     /upload
+    defaults: { _controller: FrontGeneralBundle:Default:upload }
+
