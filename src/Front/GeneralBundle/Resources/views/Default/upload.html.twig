@@ -1,26 +1,31 @@
 {% extends "::base.html.twig" %}
-{% block title %}Upload{% endblock %}
+{% block title %}Partager une vidéo{% endblock %}
+
 {% block body %}
-<h3 style="margin-top:50px;">Partagez une vidéo</3>
+
+<h3 style="margin-top:50px;">Partager une vidéo</h3>
+
 {# L'utilisateur est-il connecté ? #}
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     {# L'utilisateur est connecté ! #}
     <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
 
-    {# L'utilisateur est-il admin ? #}
-    {% if is_granted('ROLE_ADMIN') %}
-        {# L'utilisateur est admin ! #}
-       <a href="{{ path('admin') }}">Administration</a>
-    {% endif %}
 {% else %}
     {# L'utilisateur n'est pas connecté ! #}
     <a href="{{ path('fos_user_security_login') }}">Connexion</a>
     <a href="{{ path('fos_user_registration_register') }}">Inscription</a>
 {% endif %}
 
-<!-- Deuxiemement -->
-{% if is_granted("ROLE") %}
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     Bien le bonjour {{ app.user.username }} !
 {% endif %}
+
+<form action="{{ path('front_general_homepage') }}" method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Partagez votre vidéo" />
+</form>
+
 {% endblock %}
 
